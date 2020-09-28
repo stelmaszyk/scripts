@@ -4,9 +4,8 @@
 
 if [ "$(whoami)" != "root" ];
   then echo "You need to run this script as root"
-  exit 1;
-  else 
-  #do nothingfi
+  exit 1
+fi
 
       echo "Stopping FR24Feed Service"
       systemctl stop fr24feed
@@ -19,6 +18,7 @@ if [ "$(whoami)" != "root" ];
       echo "ok"
 
       sleep 1
+      echo "==============================="
       echo "Looking for FR24Feed processes in the operating system. If found, killing:"
       killall fr24feed
       killall fr24feed-status
